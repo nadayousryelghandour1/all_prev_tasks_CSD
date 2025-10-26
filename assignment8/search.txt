@@ -1,0 +1,6 @@
+مثلا خلينا فاكرين ان splice الزيرو قال انها بتضيف و تحذف طب ازاي
+splice(index ,deleted item ,  additem , additem,..........)
+
+
+لو عايزه اضيف property خاصة غير ال built in 
+data-propName = "";

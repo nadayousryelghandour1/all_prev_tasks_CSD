@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ASS4</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 28px;
+      }
+      
+      p{
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      span{
+        margin-right:5%;
+      }
+
+      
+    </style>
+
+    <script>
+      var students = [
+        { name: "Ali", age: 20, Crs: "CS" },
+        { name: "Sara", age: 22, Crs: "Math" },
+        { name: "Omar", age: 19, Crs: "Physics" },
+        { name: "Laila", age: 21, Crs: "CS" },
+        { name: "Hassan", age: 23, Crs: "Engineering" },
+        { name: "Mona", age: 20, Crs: "Biology" },
+        { name: "Kareem", age: 24, Crs: "Math" },
+        { name: "Noor", age: 18, Crs: "CS" },
+      ];
+
+      var reverse = [
+        { name: "Ali", age: 20, Crs: "CS" },
+        { name: "Sara", age: 22, Crs: "Math" },
+        { name: "Omar", age: 19, Crs: "Physics" },
+        { name: "Laila", age: 21, Crs: "CS" },
+        { name: "Hassan", age: 23, Crs: "Engineering" },
+        { name: "Mona", age: 20, Crs: "Biology" },
+        { name: "Kareem", age: 24, Crs: "Math" },
+        { name: "Noor", age: 18, Crs: "CS" },
+      ];
+      document.write(
+        `<h1 style="color:darkblue;">All Student</h1>`
+      );
+
+      students.forEach(function (ele) {
+        document.write(`<div style="color :darkblue; ">
+        <span>Student name : ${ele.name}</span>
+        <span>Student age : ${ele.age}</span>
+        <span>Crs : ${ele.Crs}</span>
+        <hr color="darkblue"/>
+    </div>`);
+      });
+
+      var search;
+      while (search == undefined || search == "") {
+        search = prompt("Enter Student Name For Search");
+      }
+
+      var flag = false;
+      var student = students.find(function (ele) {
+        if (ele.name.toLowerCase() == search.toLowerCase()) {
+          flag = true;
+          return ele;
+        }
+      });
+
+      document.write(
+        `<h1 style="color:magenta;">Search Result</h1>`
+      );
+
+      flag
+        ? document.write(
+            `<div style="color:magenta;"><p>Student name : ${student.name}</p> <p>Student age : ${student.age}</p> <p>Crs : ${student.Crs}</p> <hr/></div>`
+          )
+        : document.write(
+            `<p style="color:magenta;">Sorry Student Name : ${search} Not Exist</p><hr/>`
+          );
+
+      document.write(
+        `<h1 style="color:green;" ;font-size:30px;>Student Number</h1>`
+      );
+      document.write(
+        `<p style="color:green;">${students.length}</p><hr/>`
+      );
+
+      var csStudent = students.filter(function (ele) {
+        if (ele.Crs.toLowerCase() == "cs") {
+          return ele;
+        }
+      });
+
+      document.write(
+        `<h1 style="color:Red;" >CS Student</h1>`
+      );
+
+      csStudent.forEach(function (ele) {
+        document.write(`<div style="color :red;  ">
+        <span>Student name : ${ele.name}</span>
+        <span>Student age : ${ele.age}</span>
+        <span>Crs : ${ele.Crs}</span>
+        <hr color="red"/>
+    </div>`);
+      });
+
+      var young = students.reduce(function (target, ele) {
+        return target.age >= ele.age ? ele : target;
+      });
+
+      document.write(
+        `<h1 style="color:orange; " >youngest student</h1>`
+      );
+
+      document.write(
+        `<div style="color:orange;"><p>Student name : ${young.name}</p> <p>Student age : ${young.age}</p> <p>Crs : ${young.Crs}</p> <hr/></div>`
+      );
+
+      document.write(
+        `<h1 style="color:darkgoldenrod;" >Sorted Student (Age)</h1>`
+      );
+
+      students.sort(function (a, b) {
+        return a.age - b.age;
+      });
+      students.forEach(function (ele) {
+        document.write(`<div style="color :darkgoldenrod;  ">
+        <span>Student name : ${ele.name}</span>
+        <span>Student age : ${ele.age}</span>
+        <span>Crs : ${ele.Crs}</span>
+        <hr color="darkgoldenrod"/>
+    </div>`);
+      });
+
+      document.write(
+        `<h1 style="color:chocolate;" >Student Names</h1>`
+      );
+
+      var studentNames = students.map(function (ele) {
+        return ele.name;
+      });
+      studentNames.forEach(function (ele) {
+        document.write(`<div style="color :chocolate;  ">
+        <span>Student name : ${ele}</span>
+        <hr color="chocolate"/>
+    </div>`);
+      });
+
+      document.write(
+        `<h1 style="color:brown;">All students are above age  18?</h1>`
+      );
+
+      var bool = students.every(function (ele) {
+        return ele.age > 18;
+      });
+      document.write(
+        `<h1 style="color:brown;">${bool}</h1><hr/>`
+      );
+
+
+
+
+
+
+
+
+
+
+      document.write(
+        `<h1 style="color:black;">Different Crs</h1>`
+      );
+
+      var mathStudent = [];
+      var physicsStudent = [];
+      var engineeringStudent = [];
+      var bioStudent = [];
+
+      students.forEach(function(ele){
+        if (ele.Crs.toLowerCase() == "math") {
+          mathStudent.push(ele);
+        }
+
+        else if (ele.Crs.toLowerCase() == "physics") {
+          physicsStudent.push(ele);
+        }
+
+        else if (ele.Crs.toLowerCase() == "engineering") {
+          engineeringStudent.push(ele);
+        }
+
+        else if (ele.Crs.toLowerCase() == "biology") {
+          bioStudent.push(ele);
+        }
+      });
+
+
+
+      csStudent.forEach(function (ele) {
+        document.write(`<div style="color :blue;  ">
+        <span>Student name : ${ele.name}</span>
+        <span>Student age : ${ele.age}</span>
+        <span>Crs : ${ele.Crs}</span>
+        <hr color="blue"/>
+    </div>`);
+      });
+
+
+      mathStudent.forEach(function (ele) {
+        document.write(`<div style="color :magenta;  ">
+        <span>Student name : ${ele.name}</span>
+        <span>Student age : ${ele.age}</span>
+        <span>Crs : ${ele.Crs}</span>
+        <hr color="magenta"/>
+    </div>`);
+      });
+
+
+      physicsStudent.forEach(function (ele) {
+        document.write(`<div style="color :green;  ">
+        <span>Student name : ${ele.name}</span>
+        <span>Student age : ${ele.age}</span>
+        <span>Crs : ${ele.Crs}</span>
+        <hr color="green"/>
+    </div>`);
+      });
+      
+      engineeringStudent.forEach(function (ele) {
+        document.write(`<div style="color :orange;  ">
+        <span>Student name : ${ele.name}</span>
+        <span>Student age : ${ele.age}</span>
+        <span>Crs : ${ele.Crs}</span>
+        <hr color="orange"/>
+    </div>`);
+      });
+
+      
+      bioStudent.forEach(function (ele) {
+        document.write(`<div style="color :red;  ">
+        <span>Student name : ${ele.name}</span>
+        <span>Student age : ${ele.age}</span>
+        <span>Crs : ${ele.Crs}</span>
+        <hr color="red"/>
+    </div>`);
+      });
+
+
+
+
+
+
+
+
+      document.write(
+        `<h1 style="color:darkorchid;">Average Age</h1>`
+      );
+
+      var studentsAge = students.map(function (ele) {
+        return ele.age;
+      });
+
+      var average =
+        studentsAge.reduce(function (target, ele) {
+          return target + ele;
+        }) / students.length;
+      document.write(
+        `<h1 style="color:darkorchid;">${average}</h1><hr/>`
+      );
+
+
+
+
+
+
+      document.write(
+        `<h1 style="color:crimson;">top 3 oldest students</h1>`
+      );
+
+      students.sort(function (a, b) {
+        return b.age - a.age;
+      });
+
+      for (var i = 0; i < 3; i++) {
+        document.write(`<div style="color :crimson;  ">
+        <span>Student name : ${students[i].name}</span>
+        <span>Student age : ${students[i].age}</span>
+        <span style="margin-right:5%;">Crs : ${students[i].Crs}</span>
+        <hr color="crimson"/>
+    </div>`);
+      }
+
+      document.write(
+        `<h1 style="color:darkgreen;">Find if there are students with the same name.</h1>`
+      );
+
+      var tell = [];
+      for (var i = 0; i < students.length; i++) {
+        for (var j = i + 1; j < students.length; j++) {
+          if (
+            students[i].name.toLowerCase() == students[j].name.toLowerCase()
+          ) {
+            tell.push(students[i].name);
+            break;
+          }
+        }
+      }
+
+      tell.length
+        ? document.write(
+            `<h1 style="color:darkgreen;">True</h1>`
+          )
+        : document.write(
+            `<h1 style="color:darkgreen;">False</h1><hr/>`
+          );
+
+
+
+
+
+
+
+      document.write(
+        `<h1 style="color:darkmagenta;">Reversed Array</h1><hr/>`
+      );
+
+      var temp = null;
+      for (
+        var i = 0, j = reverse.length - 1;
+        i < reverse.length && i < j;
+        i++, j--
+      ) {
+        temp = reverse[i];
+        reverse[i] = reverse[j];
+        reverse[j] = temp;
+      }
+      reverse.forEach(function (ele) {
+        document.write(`<div style="color :darkmagenta;  ">
+        <span>Student name : ${ele.name}</span>
+        <span>Student age : ${ele.age}</span>
+        <span>Crs : ${ele.Crs}</span>
+        <hr color="darkmagenta"/>
+    </div>`);
+      });
+
+
+
+
+
+
+
+      document.write(
+        `<h1 style="color:firebrick;">Add a new property email for each student</h1><hr/>`
+      );
+      students = students.map(function (ele) {
+        ele.email = `${ele.name.toLowerCase()}@iti.com`;
+        return ele;
+      });
+      students.forEach(function (ele) {
+        document.write(`<div style="color :firebrick;  ">
+        <span>Student name : ${ele.name}</span>
+        <span>Student age : ${ele.age}</span>
+        <span>Crs : ${ele.Crs}</span>
+        <span>Email : ${ele.email}</span>
+        <hr color="firebrick"/>
+    </div>`);
+      });
+    </script>
+  </head>
+  <body>
+    <div style="color: firebrick"></div>
+  </body>
+</html>

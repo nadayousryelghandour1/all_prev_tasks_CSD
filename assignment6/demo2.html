@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var query = location.search.split("?")[1].split("&");
+        var uname = query[0].split("=")[1];
+        var pass = query[1].split("=")[1];
+        if(uname.toLowerCase()=="ali"&&pass=="123"){
+            document.write('<h1 style="color: red; text-align:center;">welcome ya ali</h1>');
+        }else{
+            document.write('<h1 style="color: red; text-align:center;">ERROR</h1>');
+        }
+        console.log(uname);</script>
+    <title>Demo</title>
+</head>
+<body>
+    
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ASS2</title>
+    <script src="student_js.js"></script>
+    <link rel="stylesheet" href="css.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div><table id="table"></table></div>
+    <div>
+      <form action="">
+        <input
+          type="text"
+          name="search"
+          placeholder="search"
+          id="search"
+        /><button id="searchIcon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <div>
+        <table id="showInfo"></table>
+        <p id="show"></p>
+      </div>
+      <div>
+        <form action="">
+            <select name="sort" id="sort">
+            <option value="0"></option>
+            <option value="1">Name</option>
+            <option value="2">Age</option>
+        </select>
+        </form>
+
+        <div><table id="sortTable"></table></div>
+      </div>
+    </div>
+  </body>
+</html>

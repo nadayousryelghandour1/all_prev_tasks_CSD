@@ -1,0 +1,97 @@
+#table{
+    border: 2px solid black;
+    border-spacing: 0px;
+    width : 400px;
+    height : 400px ;
+    margin: 50px auto;
+    font-size: 20px;
+}
+
+#table th,#table td{
+    border: 2px solid green;
+    text-align: center;
+}
+
+#table th{
+    background: rgb(201, 234, 201);
+}
+
+.icon{
+    margin: 20px;
+}
+
+#showInfo{
+    border: 2px solid black;
+    border-spacing: 0px;
+    font-size: 20px;
+    position: relative;
+    bottom: 70px;
+    left: 75%;
+}
+
+#showInfo th,#showInfo td{
+    border: 2px solid red;
+    text-align: center;
+    padding: 30px;
+}
+
+#showInfo th{
+    background: rgb(234, 209, 201);
+}
+
+#search{
+    width: 250px;
+    height: 30px;
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 30px;
+}
+
+#searchIcon{
+    background-color: white;
+    border: 0px;
+    font-size: 20px;
+    position: relative;
+    right: 50px;
+}
+
+#show{
+    font-size: 30px;
+    color: crimson;
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
+}
+
+#sortTable{
+    border-spacing: 0px;
+    width : 400px;
+    height : 400px ;
+    margin: 50px auto;
+    font-size: 20px;
+}
+
+#sortTable th,#sortTable td{
+    border: 2px solid green;
+    text-align: center;
+}
+
+#sortTable th{
+    background: rgb(201, 234, 201);
+}
+
+#sort{
+   width: 280px;
+    height: 50px;
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 30px;
+}
+
+div{
+    height: 400px;
+    margin-bottom: 80px;
+}
+

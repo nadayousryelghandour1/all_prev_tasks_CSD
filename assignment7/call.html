@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>// ret , default and condition
+        function showInfo(us = 'Un' , ag="Un" , show = 'yes' , rt = 0 , ...sk){
+            document.write('<div>')
+                document.write(`<h1>hiii ${us}</h1>`)
+                document.write(`<h1>age ${ag}</h1>`)
+                document.write(`<h1>HR $${rt}</h1>`)
+                if(show ==='yes'){
+                    console.log("yes");
+                    /*for(i=0;i<sk.length;i++){
+                         document.write(`<h1> ${sk[i]}</h1>`)
+                    }*/
+                    if(sk.length>0){
+                        document.write(`<h1> ${sk.join(" || ")}</h1>`)
+                    }else{
+                        document.write(`<h1>No skills to show</h1>`)
+                    }
+                }else{
+                    console.log('no')
+                     document.write(`<h1>skills is hidden</h1>`)
+                }
+            document.write('</div>')
+        }
+
+        var swap = "elZERo";
+        var invertednum= [1,-10,-20,15,100,-30];
+        var ignoreBoolens = "Elz123er4o";
+
+        var swaped = swap.split("").map(function(ele){
+           return ele === ele.toUpperCase() ? ele.toLowerCase() : ele.toUpperCase();
+        }).join('');
+
+        console.log(swaped)
+
+        var inverted = invertednum.map(function(ele){
+            return -1*ele;
+        })
+
+        console.log(inverted);
+
+        var ignore = ignoreBoolens.split('').map(function(ele){
+            return isNaN(parseInt(ele)) ? ele : ""
+
+        }).join('');
+
+        console.log(ignore);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
